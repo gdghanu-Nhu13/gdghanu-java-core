@@ -1,38 +1,26 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+/*
+import java.util.function.Predicate;
+
+class LambdaPredicateExample {
     public static void main(String[] args) {
-        //syncFuntionExample();
-        asyncFuntionExample();
-    }
-    static void asyncFuntionExample() {
-        System.out.println("Bắt đầu");
+        Predicate<Integer> isEven = n -> n % 2 == 0;
 
-        Thread thread = new Thread(() -> doTaskAsync());
-
-        thread.start();
-
-        System.out.println("Kết thúc");
-    }
-    static void doTaskAsync() {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Tác vụ đã hoàn thành");
-    }
-    static void syncFuntionExample(){
-        System.out.println("Bắt đầu");
-        doTask();
-        System.out.println("Kết thúc");
-    }
-    static void doTask() {
-        try {
-            Thread.sleep(2000);
-            System.out.println("Task đã hoàn thành");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        System.out.println(isEven.test(4)); // true
+        System.out.println(isEven.test(7)); // false
     }
 }
+*/
+
+import java.util.*;
+
+class LambdaExample {
+    public static void main(String[] args) {
+        List<String> names = Arrays.asList("Nhu", "Linh", "Anh", "Minh");
+
+        // Sử dụng Lambda để sắp xếp danh sách
+        Collections.sort(names, (a, b) -> a.compareTo(b));
+
+        System.out.println(names);
+    }
+}
+
