@@ -1,38 +1,29 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+import java.util.*;
+
+class ListComparison {
     public static void main(String[] args) {
-        //syncFuntionExample();
-        asyncFuntionExample();
-    }
-    static void asyncFuntionExample() {
-        System.out.println("Bắt đầu");
+        // Khởi tạo
+        List<Integer> arrayList = new ArrayList<>();
+        List<Integer> linkedList = new LinkedList<>();
 
-        Thread thread = new Thread(() -> doTaskAsync());
+        // Thêm phần tử
+        arrayList.add(1);
+        arrayList.add(2);
+        arrayList.add(3);
 
-        thread.start();
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(3);
 
-        System.out.println("Kết thúc");
-    }
-    static void doTaskAsync() {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Tác vụ đã hoàn thành");
-    }
-    static void syncFuntionExample(){
-        System.out.println("Bắt đầu");
-        doTask();
-        System.out.println("Kết thúc");
-    }
-    static void doTask() {
-        try {
-            Thread.sleep(2000);
-            System.out.println("Task đã hoàn thành");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        // Truy xuất phần tử
+        System.out.println("ArrayList get(1): " + arrayList.get(1)); // Nhanh
+        System.out.println("LinkedList get(1): " + linkedList.get(1)); // Chậm hơn
+
+        // Xóa phần tử ở giữa
+        arrayList.remove(1);
+        linkedList.remove(1);
+
+        System.out.println("ArrayList sau khi xóa: " + arrayList);
+        System.out.println("LinkedList sau khi xóa: " + linkedList);
     }
 }
